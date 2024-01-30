@@ -1,15 +1,10 @@
 import './App.css';
 import React , {useState} from 'react';
-import About from './components/About';
+
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
 
 function App() {
   const root=document.querySelector('body');
@@ -87,17 +82,16 @@ else{
 
   return (
     <div className="App" style={myStyle}>
-  <Router>    
+
 <Navbar title="textUtils" mode={mode} togglemode={togglemode} toggle={togglestyle}/>
 
 <Alert alert={alert}/>
 
-<Routes>
-          <Route path="/About" element={<About mode={mode} myStyle={myStyle}/>}/>
-          <Route path="/" element={<Textform heading="Enter text below to analyze "style={myStyle} alert={showalert}/>}/>
+
+<Textform heading="Enter text below to analyze "style={myStyle} alert={showalert}/>
             
-</Routes>
-        </Router>
+
+    
 
 
 
